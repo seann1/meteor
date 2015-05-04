@@ -15,9 +15,9 @@ Router.route('restaurants', {
 	}
 });
 
-Template.restaurants.editingDoc = function() {
-	return Restaurants.findOne({_id: Session.get("selectedDocId")});
-}
+Template.restaurants.helpers(function() {
+		return Restaurants.findOne({_id: Session.get('selectedDocId')});
+});
 
 Template.restaurants.events({
 	'click li a': function (e, restaurant) {

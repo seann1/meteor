@@ -10,7 +10,7 @@ Restaurants.attachSchema(new SimpleSchema({
 		type: String,
 		label: "Address"
 	},
-	user_id: {
+	userId: {
 		type: String,
 		label: "User id"
 	}
