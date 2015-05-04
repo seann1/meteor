@@ -2,10 +2,22 @@
 	<h1>Restaurants</h1>
 	{{#if editingDoc}}
 		<h2>Edit</h2>
-		{{> quickForm collection="Restaurants" doc=editingDoc id="updateRestaurantsForm" type="update"}}
+		{{#autoForm collection="Restaurants" id="updateRestaurantForm" type="update"}}
+			<fieldset>
+				{{> afQuickField name='name'}}
+				{{> afQuickField name='address'}}
+				<button type="submit" class="btn btn-primary">Update</button>
+			</fieldset>
+		{{/autoForm}}
 	{{ else }}
 		<h2>Add</h2>
-		{{> quickForm collection="Restaurants" id="insertRestaurantForm" type="insert"}}
+		{{#autoForm collection="Restaurants" id="insertRestaurantForm" type="insert"}}
+			<fieldset>
+				{{> afQuickField name='name'}}
+				{{> afQuickField name='address'}}
+				<button type="submit" class="btn btn-primary">Update</button>
+			</fieldset>
+		{{/autoForm}}
 	{{/if}}
 		<ul>
 			{{#each restaurants}}
