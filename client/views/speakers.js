@@ -1,9 +1,9 @@
-Router.route('speakers', {
-	path: '/speakers',
-	template: 'speakers',
+Router.route('restaurants', {
+	path: '/restaurants',
+	template: 'restaurants',
 	data: function () {
 		return {
-			speakers: Speakers.find()
+			restaurants: Restaurants.find()
 		}
 	},
 	onBeforeAction: function () {
@@ -15,12 +15,12 @@ Router.route('speakers', {
 	}
 });
 
-Template.speakers.editingDoc = function() {
-	return Speakers.findOne({_id: Session.get("selectedDocId")});
+Template.restaurants.editingDoc = function() {
+	return Restaurants.findOne({_id: Session.get("selectedDocId")});
 }
 
-Template.speakers.events({
-	'click li a': function (e, speaker) {
+Template.restaurants.events({
+	'click li a': function (e, restaurant) {
 		Session.set('selectedDocId', this._id);
 	},
 	'click #clear-people': function () {

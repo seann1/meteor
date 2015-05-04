@@ -1,0 +1,17 @@
+<template name="restaurants">
+	<h1>Restaurants</h1>
+	{{#if editingDoc}}
+		<h2>Edit</h2>
+		{{> quickForm collection="Restaurants" doc=editingDoc id="updateRestaurantsForm" type="update"}}
+	{{ else }}
+		<h2>Add</h2>
+		{{> quickForm collection="Restaurants" id="insertRestaurantForm" type="insert"}}
+	{{/if}}
+		<ul>
+			{{#each restaurants}}
+			<li><a>{{name}}</a></li>
+			{{/each}}
+		</ul>
+
+		<a id="clear-people">Clear</a>
+</template>
