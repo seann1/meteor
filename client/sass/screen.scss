@@ -1,0 +1,21 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass";
+
+.welcome {
+	text-align: center;
+	background-color: yellow;
+	padding: 20px 0 20px 0;
+}
+
+.marge {
+	margin-top: 30px;
+}
+.enter-block {
+	background-color: rgba(160, 160, 160, 0.8);
+	padding: 20px;
+	margin: 10px 0 10px 0;
+}
