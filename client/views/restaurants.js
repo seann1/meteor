@@ -25,8 +25,6 @@ Template.restaurants.helpers({
 Template.restaurants.events({
 	'click li a': function (e, restaurant) {
 		Session.set('selectedDocId', this._id);
-		console.log(restaurant);
-		console.log(this);
 	},
 	'click #clear-people': function () {
 		Session.set('selectedDocId', null);
