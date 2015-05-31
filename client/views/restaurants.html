@@ -3,24 +3,10 @@
 		<h1>My Restaurants</h1>
 		{{#each userRestaurants}}
 			<div class="restaurantRow">
-				<a href="{{pathFor 'restaurantPage'}}">{{name}}</a>
+				<a href="{{pathFor 'restaurantPage'}}" class="restaurantName">{{name}}</a>
 			</div>
 		{{/each}}
 		<a href="{{pathFor 'newRestaurant'}}" class="btn btn-primary">New Restaurant</a>
-	</div>
-
-
-	<div class="container">
-		{{ #if selectedRestaurantDoc }}
-			<h2>Edit {{selectedRestaurantDoc.name}}</h2>
-			{{#autoForm collection="Restaurants" doc=selectedRestaurantDoc id="updateRestaurantForm" type="update"}}
-				<fieldset>
-					{{> afQuickField name='name'}}
-					{{> afQuickField name='address'}}
-					<button type="submit" class="btn btn-primary">Update</button>
-				</fieldset>
-			{{/autoForm}}
-		{{ /if }}
 	</div>
 </template>
 
@@ -37,4 +23,18 @@
 		  <input type="file" class="myFileInput" name="pic" accept="image/*">
 		</form>
 	</div>
+</template>
+
+<template name="editRestaurant">
+	<div class="container">
+		<h2>Edit {{selectedRestaurantDoc.name}}</h2>
+		{{#autoForm collection="Restaurants" doc=this id="updateRestaurantForm" type="update"}}
+			<fieldset>
+				{{> afQuickField name='name'}}
+				{{> afQuickField name='address'}}
+				<button type="submit" class="btn btn-primary">Update</button>
+			</fieldset>
+		{{/autoForm}}
+	</div>
+	
 </template>

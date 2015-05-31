@@ -9,6 +9,10 @@ body {
 	overflow: hidden;
 }
 
+a:hover {
+	text-decoration: none;
+}
+
 .welcome {
 	text-align: center;
 	// needs latest Compass, add '@import "compass"' to your scss
@@ -26,4 +30,13 @@ body {
 	background-color: rgba(160, 160, 160, 0.8);
 	padding: 20px;
 	margin: 10px 0 10px 0;
+}
+
+.restaurantRow {
+	padding: 10px;
+	background-color: rgba(0,0,0,0.5);
+	margin: 10px;
+	.restaurantName {
+		color: white;
+	}
 }

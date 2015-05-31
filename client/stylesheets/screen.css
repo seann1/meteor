@@ -8,6 +8,11 @@ body {
 }
 
 /* line 12, ../sass/screen.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 16, ../sass/screen.scss */
 .welcome {
   text-align: center;
   background-color: #efd5e1;
@@ -22,14 +27,25 @@ body {
   padding: 20px 0 20px 0;
 }
 
-/* line 22, ../sass/screen.scss */
+/* line 26, ../sass/screen.scss */
 .marge {
   margin-top: 30px;
 }
 
-/* line 25, ../sass/screen.scss */
+/* line 29, ../sass/screen.scss */
 .enter-block {
   background-color: rgba(160, 160, 160, 0.8);
   padding: 20px;
   margin: 10px 0 10px 0;
+}
+
+/* line 35, ../sass/screen.scss */
+.restaurantRow {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 10px;
+}
+/* line 39, ../sass/screen.scss */
+.restaurantRow .restaurantName {
+  color: white;
 }
