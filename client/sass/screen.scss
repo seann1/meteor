@@ -5,9 +5,17 @@
 
 @import "compass";
 
+body {
+	overflow: hidden;
+}
+
 .welcome {
 	text-align: center;
-	background-color: yellow;
+	// needs latest Compass, add '@import "compass"' to your scss
+	background-color: #efd5e1; // Old browsers
+	@include filter-gradient(#efd5e1, #cce5e4, vertical); // IE6-9
+	@include background-image(linear-gradient(top,  #efd5e1 0%,#cce5e4 100%));
+
 	padding: 20px 0 20px 0;
 }
 

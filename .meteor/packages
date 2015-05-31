@@ -17,3 +17,6 @@ ian:accounts-ui-bootstrap-3
 accounts-facebook
 accounts-twitter
 aldeed:geocoder
+cfs:standard-packages
+cfs:filesystem
+cfs:s3
