@@ -15,3 +15,25 @@ Restaurants.attachSchema(new SimpleSchema({
 		label: "User id"
 	}
 }));
+
+Meteor.methods({
+	editRestaurant: function(restaurantAttributes) {
+		var notAuthorized = function(userId, restaurantUserId) {
+			if (userId !== restaurantUserId) {
+				return true
+			} else {
+				return false
+			};
+		};
+
+		if (notAuthorized(Meteor.user()._id, restaurantAttributes.userId)) {
+			console.log("hello");
+		} else {
+			Restaurants.update({_id: restaurantAttributes._id}, {$set: restaurantAttributes});
+		}
+
+		return {
+			_id: restaurantAttributes._id
+		}
+	}
+})

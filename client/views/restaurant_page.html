@@ -1,6 +1,13 @@
 <template name="restaurantPage">
 	<div class="container">
-		{{name}}
-		<a class="btn btn-success" href="{{pathFor 'editRestaurant'}}">Edit</a>
+		<div class="row">
+			{{name}}
+		</div>
+		<div class="row">
+			{{address}}
+		</div>
+		{{#if userCanEdit}}
+			<a class="btn btn-success" href="{{pathFor 'editRestaurant'}}">Edit</a>
+		{{/if}}
 	</div>
 </template>
