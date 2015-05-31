@@ -3,9 +3,10 @@
 		<h1>My Restaurants</h1>
 		{{#each userRestaurants}}
 			<div class="restaurantRow">
-				{{name}}
+				<a href="{{pathFor 'restaurantPage'}}">{{name}}</a>
 			</div>
 		{{/each}}
+		<a href="{{pathFor 'newRestaurant'}}" class="btn btn-primary">New Restaurant</a>
 	</div>
 
 
@@ -19,25 +20,21 @@
 					<button type="submit" class="btn btn-primary">Update</button>
 				</fieldset>
 			{{/autoForm}}
-		{{ else }}
-			<h2>Add</h2>
-			{{#autoForm collection="Restaurants" id="insertRestaurantForm" type="insert"}}
-				<fieldset>
-					{{> afQuickField name='name' value=restaurantHelper}}
-					{{> afQuickField name='address'}}
-					<button type="submit" class="btn btn-primary">Create</button>
-				</fieldset>
-			{{/autoForm}}
-			<form action="/">
-			  <input type="file" class="myFileInput" name="pic" accept="image/*">
-			</form>
 		{{ /if }}
-		<ul>
-			{{#each restaurants}}
-			<li><a>{{name}}</a></li>
-			{{/each}}
-		</ul>
+	</div>
+</template>
 
-		<a id="clear-people">Clear</a>
+<template name="newRestaurant">
+	<div class="container">
+		{{#autoForm collection="Restaurants" id="insertRestaurantForm" type="insert"}}
+			<fieldset>
+				{{> afQuickField name='name' value=restaurantHelper}}
+				{{> afQuickField name='address'}}
+				<button type="submit" class="btn btn-primary">Create</button>
+			</fieldset>
+		{{/autoForm}}
+		<form action="/">
+		  <input type="file" class="myFileInput" name="pic" accept="image/*">
+		</form>
 	</div>
 </template>
