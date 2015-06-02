@@ -15,11 +15,6 @@ Router.route('restaurants', {
 	}
 });
 
-Router.route('/restaurants/:_id', {
-	name: 'restaurantPage',
-	data: function() { return Restaurants.findOne(this.params._id); }
-});
-
 Template.restaurants.helpers({
 	selectedRestaurantDoc: function() {
 		return Restaurants.findOne({_id: Session.get('selectedDocId')});
@@ -36,21 +31,7 @@ Template.restaurants.events({
 	},
 	'click #clear-people': function () {
 		Session.set('selectedDocId', null);
-	},
-	'change #input': function(event, template) {
-    var files = event.target.files;
-
-	uploader.send(files[0], function (error, downloadUrl) {
-		if (error) {
-    	// Log service detailed response
-    		console.error('Error uploading', uploader.xhr.response);
-    		alert (error);
-  		}
-	  	else {
-	    	Meteor.restaurants.update(this, {$push: {"images": downloadUrl}});
-	  	}
-	});
-  }
+	}
 });
 
 Template.editRestaurant.helpers({
@@ -83,4 +64,4 @@ Template.editRestaurant.events({
 		})
 
 	}
-})
+});

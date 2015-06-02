@@ -1,13 +1,24 @@
 <template name="restaurantPage">
 	<div class="container">
 		<div class="row">
-			{{name}}
+			<div class="col-md-10 restaurantTitle">
+				<h1>{{name}}</h1>
+			</div>
+			<div class="col-md-2">
+				{{#if userCanEdit}}
+					<a class="btn btn-success" href="{{pathFor 'editRestaurant'}}">Edit</a>
+				{{/if}}
+			</div>
 		</div>
 		<div class="row">
-			{{address}}
+			<div class="col-md-8">
+				<form action="/">
+					<input type="file" id="input" name="pic" accept="image/*">
+				</form>
+			</div>
+			<div class="col-md-4">
+				<div class="restaurantAddress">{{address}}</div>
+			</div>
 		</div>
-		{{#if userCanEdit}}
-			<a class="btn btn-success" href="{{pathFor 'editRestaurant'}}">Edit</a>
-		{{/if}}
 	</div>
 </template>

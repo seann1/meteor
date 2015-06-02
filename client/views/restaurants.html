@@ -2,8 +2,12 @@
 	<div class="container">
 		<h1>My Restaurants</h1>
 		{{#each userRestaurants}}
-			<div class="restaurantRow">
-				<a href="{{pathFor 'restaurantPage'}}" class="restaurantName">{{name}}</a>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="restaurantRow">
+						<a href="{{pathFor 'restaurantPage'}}" class="restaurantName">{{name}}</a>
+					</div>
+				</div>
 			</div>
 		{{/each}}
 		<a href="{{pathFor 'newRestaurant'}}" class="btn btn-primary">New Restaurant</a>
@@ -12,16 +16,17 @@
 
 <template name="newRestaurant">
 	<div class="container">
-		{{#autoForm collection="Restaurants" id="insertRestaurantForm" type="insert"}}
-			<fieldset>
-				{{> afQuickField name='name' value=restaurantHelper}}
-				{{> afQuickField name='address'}}
-				<button type="submit" class="btn btn-primary">Create</button>
-			</fieldset>
-		{{/autoForm}}
-		<form action="/">
-		  <input type="file" id="input" name="pic" accept="image/*">
-		</form>
+		<div class="row">
+			<div class="col-md-4">
+				{{#autoForm collection="Restaurants" id="insertRestaurantForm" type="insert"}}
+					<fieldset>
+						{{> afQuickField name='name' value=restaurantHelper}}
+						{{> afQuickField name='address'}}
+						<button type="submit" class="btn btn-primary">Create</button>
+					</fieldset>
+				{{/autoForm}}
+			</div>
+		</div>
 	</div>
 </template>
 

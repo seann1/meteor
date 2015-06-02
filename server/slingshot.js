@@ -1,5 +1,6 @@
 Slingshot.createDirective("myFileUploads", Slingshot.S3Storage, {
   bucket: 'sean-carty',
+  region: 'us-west-2',
 
   acl: "public-read",
 

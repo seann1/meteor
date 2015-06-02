@@ -43,9 +43,24 @@ a:hover {
 .restaurantRow {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.5);
-  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-/* line 39, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 .restaurantRow .restaurantName {
+  font-size: 1.5em;
   color: white;
+}
+
+/* line 46, ../sass/screen.scss */
+.restaurantTitle {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+/* line 52, ../sass/screen.scss */
+.restaurantAddress {
+  padding: 5px;
+  font-weight: bold;
 }

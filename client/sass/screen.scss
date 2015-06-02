@@ -35,8 +35,21 @@ a:hover {
 .restaurantRow {
 	padding: 10px;
 	background-color: rgba(0,0,0,0.5);
-	margin: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	.restaurantName {
+		font-size: 1.5em;
 		color: white;
 	}
+}
+
+.restaurantTitle {
+	padding: 10px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+}
+
+.restaurantAddress {
+	padding: 5px;
+	font-weight: bold;
 }
