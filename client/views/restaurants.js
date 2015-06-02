@@ -37,7 +37,7 @@ Template.restaurants.events({
 	'click #clear-people': function () {
 		Session.set('selectedDocId', null);
 	},
-	'change .myFileInput': function(event, template) {
+	'change #input': function(event, template) {
     var files = event.target.files;
     for (var i = 0, ln = files.length; i < ln; i++) {
       Images.insert(files[i], function (err, fileObj) {
