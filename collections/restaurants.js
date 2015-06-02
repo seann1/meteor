@@ -13,8 +13,7 @@ Restaurants.attachSchema(new SimpleSchema({
 	userId: {
 		type: String,
 		label: "User id"
-	},
-	images: []
+	}
 }));
 
 Meteor.methods({

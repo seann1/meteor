@@ -1,7 +1,5 @@
 Slingshot.createDirective("myFileUploads", Slingshot.S3Storage, {
-  bucket: Meteor.settings.awsBucket,
-  AWSAccessKeyId: Meteor.settings.awsAccessKeyId,
-  AWSSecretAccessKey: Meteor.settings.AWSSecretAccessKey
+  bucket: 'sean-carty',
 
   acl: "public-read",
 
@@ -17,7 +15,7 @@ Slingshot.createDirective("myFileUploads", Slingshot.S3Storage, {
 
   key: function (file) {
     //Store file into a directory by the user's username.
-    var user = Meteor.users.findOne(this.userId);
-    return user.username + "/" + file.name;
+    var user = Meteor.userId();
+    return user.email + "/" + file.name;
   }
 });
