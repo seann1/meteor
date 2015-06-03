@@ -2,11 +2,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 restaurantTitle">
-				<h1>{{name}}</h1>
+				<h1>{{restaurant.name}}</h1>
 			</div>
 			<div class="col-md-2">
 				{{#if userCanEdit}}
-					<a class="btn btn-success" href="{{pathFor 'editRestaurant'}}">Edit</a>
+					<a class="btn btn-success" href="{{pathFor 'editRestaurant'  _id=restaurant._id}}">Edit</a>
 				{{/if}}
 			</div>
 		</div>

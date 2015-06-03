@@ -1,10 +1,16 @@
-Template.restaurantPage.helpers({
-	userCanEdit: function() {
-		if (Meteor.userId() === this.userId) {
-			return true
+Template.restaurantPage.onRendered( function() {
+
+	Template.restaurantPage.helpers({
+		userCanEdit: function() {
+			console.log(Meteor.userId())
+			if (Meteor.userId() === this.restaurant.userId) {
+				return true
+			}
 		}
-	}
+	});
+
 });
+
 
 Template.restaurantPage.events({
 	'change #input': function(event, template) {
@@ -17,8 +23,9 @@ Template.restaurantPage.events({
 	    		alert (error);
 	  		}
 		  	else {
-		    	Meteor.restaurants.update(this._id, {$push: {"images": downloadUrl}});
+		  		console.log(this.restaurant);
+		    	Meteor.restaurants.update(this.restaurant._id, {$push: {"images": downloadUrl}});
 		  	}
 		});
   	}
-})
+});
