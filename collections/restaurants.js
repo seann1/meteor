@@ -1,5 +1,13 @@
 Restaurants = new Meteor.Collection('restaurants', {});
 
+if (Meteor.isServer) {
+      // wait for 5 seconds
+      Meteor._sleepForMs(5000);
+    } else {
+
+    }
+
+
 Restaurants.attachSchema(new SimpleSchema({
 	name: {
 		type: String,

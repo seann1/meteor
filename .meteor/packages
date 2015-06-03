@@ -19,3 +19,4 @@ accounts-twitter
 aldeed:geocoder
 edgee:slingshot
 cfs:standard-packages
+mrt:external-file-loader
