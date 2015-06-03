@@ -1,3 +1,11 @@
+Template.restaurantPage.onCreated(function () {
+	console.log(this.data);
+
+	if (this.data.restaurant.images.length < 1) {
+		Restaurants.update({_id: this.data.restaurant._id}, {$push: {"images": "https://sean-carty.s3-us-west-2.amazonaws.com/missing_screen.png"}} )
+	}
+})
+
 Template.restaurantPage.helpers({
 	userCanEdit: function() {
 		console.log(Meteor.userId())
@@ -30,3 +38,7 @@ Template.restaurantPage.events({
   	}
 });
 
+Template.restaurantPage.rendered = function() {
+	$('.restaurantImage').css("background-image", "url(" + this.data.restaurant.images[0] + ")");
+	$('.restaurantImage').css("background-repeat", "none");
+}

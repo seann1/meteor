@@ -11,14 +11,29 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-8">
-				<form action="/">
-					<input type="file" id="input" name="pic" accept="image/*">
-				</form>
+			<div class="col-md-3 restaurantImage">
+			</div>
+			<div class="col-md-5">
 			</div>
 			<div class="col-md-4">
 				<div class="restaurantAddress">{{restaurant.address}}</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<form action="/">
+					<input type="file" id="input" name="pic" accept="image/*">
+				</form>
+			</div>
+		</div>
 	</div>
+
+	<style>
+		.restaurantImage: {
+			position: relative;
+			background-image:url({{defaultImage}});
+			height: 100px;
+			width: 100px;
+		}
+	</style>
 </template>

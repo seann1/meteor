@@ -63,19 +63,25 @@ a:hover {
 .restaurantAddress {
   padding: 5px;
   font-weight: bold;
+  color: #bbff00;
 }
 
-/* line 57, ../sass/screen.scss */
+/* line 58, ../sass/screen.scss */
+.restaurantImage {
+  height: 200px;
+}
+
+/* line 62, ../sass/screen.scss */
 .margin {
   margin-top: 10px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 body {
   background-color: #3f3f3f;
 }
 
-/* line 65, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 .spinner {
   margin: 100px auto;
   width: 32px;
@@ -83,7 +89,7 @@ body {
   position: relative;
 }
 
-/* line 72, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 .cube1, .cube2 {
   background-color: #333;
   width: 10px;
@@ -95,7 +101,7 @@ body {
   animation: cubemove 1.8s infinite ease-in-out;
 }
 
-/* line 84, ../sass/screen.scss */
+/* line 89, ../sass/screen.scss */
 .cube2 {
   -webkit-animation-delay: -0.9s;
   animation-delay: -0.9s;
