@@ -64,3 +64,8 @@ a:hover {
   padding: 5px;
   font-weight: bold;
 }
+
+/* line 57, ../sass/screen.scss */
+.margin {
+  margin-top: 10px;
+}
