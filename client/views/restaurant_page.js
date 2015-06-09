@@ -1,12 +1,11 @@
 var imageUpload = new ReactiveVar();
 
 Template.restaurantPage.onRendered(function() {
-	$('.buttonMove').slideUp(0);
+	$('.photoUpload').slideUp(0);
 });
 
 Template.restaurantPage.helpers({
 	userCanEdit: function() {
-		console.log(Meteor.userId())
 		if (Meteor.userId() === this.restaurant.userId) {
 			return true
 		}
@@ -25,9 +24,12 @@ Template.restaurantPage.helpers({
     },
     success: function () {
     	var upload = imageUpload.get();
-    	if (upload.progress() * 100 === 100) {
-    		return true;
-    	}
+    	if ($("#input").val() !== ('' || undefined)) {
+	    	if (upload.progress() * 100 === 100) {
+	    		$("#input").val('');
+	    		return true;
+	    	}
+	    }
     }
 });
 
@@ -55,9 +57,12 @@ Template.restaurantPage.events({
 		});
   	},
   	'mouseenter .profile-background': function(event, template) {
-  		$('.buttonMove').slideDown(500);
+  		$('.photoUpload').slideDown(500);
   	},
   	'mouseleave .profile-background': function(event, template) {
-  		$('.buttonMove').slideUp(500);
+  		$('.photoUpload').slideUp(500);
+  	},
+  	'click .profile-background': function(event, template) {
+  		imageUpload.set();
   	}
 });

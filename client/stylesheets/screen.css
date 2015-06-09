@@ -158,26 +158,26 @@ body {
 }
 
 /* line 132, ../sass/screen.scss */
-.buttonMove {
-  position: absolute;
-  height: 50px;
-  width: 100%;
-  left: 0;
-  z-index: 100;
-  border-width: 0px;
-  bottom: -1px;
-}
-
-/* line 141, ../sass/screen.scss */
 .photoUpload {
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  z-index: 100;
+  height: 50px;
   background-color: rgba(0, 0, 0, 0.5);
   border-width: 0px;
   width: 100%;
   text-align: left;
 }
-/* line 146, ../sass/screen.scss */
+/* line 142, ../sass/screen.scss */
 .photoUpload .glyphicon-camera {
   margin-top: 5px;
   font-size: 2.7em;
   color: white;
+}
+
+/* line 149, ../sass/screen.scss */
+.progress {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
