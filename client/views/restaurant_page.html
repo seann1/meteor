@@ -12,12 +12,14 @@
 		</div>
 		<div class="row">
 			<div class="col-md-3 profile-background">
-				<img src="{{profilePic}}" class="profilePic"/>
 				{{#if userCanEdit}}
-					<button type="button" class="photoUpload" data-toggle="modal" data-target="#myModal">
-						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-					</button>
+					<div class="buttonMove">
+						<button type="button" class="photoUpload" data-toggle="modal" data-target="#myModal">
+							<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+						</button>
+					</div>
 				{{/if}}
+				<img src="{{profilePic}}" class="profilePic"/>
 			</div>
 			<div class="col-md-5">
 			</div>
@@ -49,7 +51,7 @@
     		{{/if}}
   		 </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-default close-button" data-dismiss="modal">Close</button>
 	        <button type="button" class="btn btn-primary">Save changes</button>
 	      </div>
 	    </div>

@@ -1,5 +1,9 @@
 var imageUpload = new ReactiveVar();
 
+Template.restaurantPage.onRendered(function() {
+	$('.buttonMove').slideUp(0);
+});
+
 Template.restaurantPage.helpers({
 	userCanEdit: function() {
 		console.log(Meteor.userId())
@@ -46,9 +50,9 @@ Template.restaurantPage.events({
 		});
   	},
   	'mouseenter .profile-background': function(event, template) {
-  		$('.photoUpload').animate({'bottom': '0px'}, 500);
+  		$('.buttonMove').slideDown(500);
   	},
-  	'mouseleave .profile-background, click .profile-background': function(event, template) {
-  		$('.photoUpload').animate({'bottom': '-50px'}, 500);
+  	'mouseleave .profile-background': function(event, template) {
+  		$('.buttonMove').slideUp(500);
   	}
 });

@@ -120,20 +120,28 @@ body {
 .profile-background {
   background-color: #c9c9c9;
   overflow: hidden;
-  .profilePic {
-    width: 75%;
-    margin: 0 auto;
-  }
+  height: 200px;
 }
 
-.photoUpload {
+.profilePic {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  height: 200px;
+}
+
+.buttonMove {
+  position: absolute;
   height: 50px;
   width: 100%;
   left: 0;
-  bottom: -50px;
+  z-index: 100;
   border-width: 0px;
+  bottom: -1px;
+}
+.photoUpload {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-width: 0px;
+  width: 100%;
   text-align: left;
   .glyphicon-camera {
     margin-top: 5px;
