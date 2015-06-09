@@ -4,7 +4,7 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /* line 8, ../sass/screen.scss */
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* line 12, ../sass/screen.scss */
@@ -142,4 +142,30 @@ body {
     transform: rotate(-360deg);
     -webkit-transform: rotate(-360deg);
   }
+}
+/* line 120, ../sass/screen.scss */
+.profile-background {
+  background-color: #c9c9c9;
+}
+/* line 122, ../sass/screen.scss */
+.profile-background .profilePic {
+  width: 75%;
+  margin: 0 auto;
+}
+
+/* line 128, ../sass/screen.scss */
+.photoUpload {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 40px;
+  width: 40px;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+}
+/* line 136, ../sass/screen.scss */
+.photoUpload .glyphicon-camera {
+  margin-top: 5px;
+  font-size: 2em;
+  color: white;
 }

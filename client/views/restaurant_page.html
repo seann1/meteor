@@ -11,7 +11,11 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-3 restaurantImage">
+			<div class="col-md-3 profile-background">
+				<img src="{{profilePic}}" class="profilePic"/>
+				<div class="photoUpload">
+					<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+				</div>
 			</div>
 			<div class="col-md-5">
 			</div>
@@ -27,13 +31,4 @@
 			</div>
 		</div>
 	</div>
-
-	<style>
-		.restaurantImage: {
-			position: relative;
-			background-image:url({{defaultImage}});
-			height: 100px;
-			width: 100px;
-		}
-	</style>
 </template>

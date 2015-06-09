@@ -1,9 +1,9 @@
 Template.restaurantPage.onCreated(function () {
 	console.log(this.data);
 
-	if (this.data.restaurant.images.length < 1) {
-		Restaurants.update({_id: this.data.restaurant._id}, {$push: {"images": "https://sean-carty.s3-us-west-2.amazonaws.com/missing_screen.png"}} )
-	}
+	// if (this.data.restaurant.images.length < 1) {
+	// 	Restaurants.update({_id: this.data.restaurant._id}, {$push: {"images": "https://sean-carty.s3-us-west-2.amazonaws.com/missing_screen.png"}} )
+	// }
 })
 
 Template.restaurantPage.helpers({
@@ -15,6 +15,10 @@ Template.restaurantPage.helpers({
 	},
 	restaurant: function() {
 		return this.restaurant;
+	},
+	profilePic: function() {
+		var profilePic = _.findWhere(this.restaurant.images, {defaultPic: true});
+		return profilePic.pic
 	}
 });
 
@@ -38,7 +42,7 @@ Template.restaurantPage.events({
   	}
 });
 
-Template.restaurantPage.rendered = function() {
-	$('.restaurantImage').css("background-image", "url(" + this.data.restaurant.images[0] + ")");
-	$('.restaurantImage').css("background-repeat", "none");
-}
+// Template.restaurantPage.rendered = function() {
+// 	var profilePic = _.findWhere(this.data.restaurant.images, {defaultPic: true});
+// 	Session.set('profilePic', profilePic.pic);
+// }

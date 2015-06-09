@@ -65,3 +65,26 @@ Template.editRestaurant.events({
 
 	}
 });
+
+Template.newRestaurant.events({
+	'submit form': function(e, template) {
+		e.preventDefault();
+
+		var $name = $(e.target).find('[name=name]');
+		var $address = $(e.target).find('[name=address]');
+
+		var restaurantProperties = {
+			name: $name.val(),
+			address: $address.val()	
+		}
+
+		Meteor.call('createRestaurant', restaurantProperties, function(error, result) {
+			if(error) {
+				throwError(error.reason);
+			} else {
+				Router.go('restaurants');
+			}
+		});
+
+	}
+})

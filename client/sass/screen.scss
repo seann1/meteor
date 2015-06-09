@@ -6,7 +6,7 @@
 @import "compass";
 
 body {
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 a:hover {
@@ -114,5 +114,28 @@ body {
   } 100% { 
     transform: rotate(-360deg);
     -webkit-transform: rotate(-360deg);
+  }
+}
+
+.profile-background {
+  background-color: #c9c9c9;
+  .profilePic {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
+.photoUpload {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 40px;
+  width: 40px;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  .glyphicon-camera {
+    margin-top: 5px;
+    font-size: 2em;
+    color: white;
   }
 }

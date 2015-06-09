@@ -23,11 +23,33 @@ Restaurants.attachSchema(new SimpleSchema({
 		label: "User id"
 	},
 	images: {
-		type: [String]
+		type: [Object]
+	},
+	'images.$.pic': {
+		type: String
+	},
+	'images.$.defaultPic': {
+		type: Boolean
 	}
 }));
 
 Meteor.methods({
+	createRestaurant: function(restaurantAttributes) {
+		check(this.userId, String);
+		check(restaurantAttributes, {
+			name: String,
+			address: String
+		});
+		var user = Meteor.user();
+		var restaurant = _.extend(restaurantAttributes, {
+			userId: user._id,
+			images: [{defaultPic: true, pic: 'https://sean-carty.s3-us-west-2.amazonaws.com/missing_screen.png'}]
+		});
+
+		Restaurants.insert(restaurant);
+		return restaurant._id
+	},
+
 	editRestaurant: function(restaurantAttributes) {
 		var notAuthorized = function(userId, restaurantUserId) {
 			if (userId !== restaurantUserId) {
