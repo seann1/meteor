@@ -1,10 +1,4 @@
-Template.restaurantPage.onCreated(function () {
-	console.log(this.data);
-
-	// if (this.data.restaurant.images.length < 1) {
-	// 	Restaurants.update({_id: this.data.restaurant._id}, {$push: {"images": "https://sean-carty.s3-us-west-2.amazonaws.com/missing_screen.png"}} )
-	// }
-})
+var imageUpload = new ReactiveVar();
 
 Template.restaurantPage.helpers({
 	userCanEdit: function() {
@@ -19,7 +13,13 @@ Template.restaurantPage.helpers({
 	profilePic: function() {
 		var profilePic = _.findWhere(this.restaurant.images, {defaultPic: true});
 		return profilePic.pic
-	}
+	},
+	progress: function () {
+        var upload = imageUpload.get();
+        if (upload)
+        	console.log(upload.progress());
+            return Math.round(upload.progress() * 100);
+    }
 });
 
 Template.restaurantPage.events({
@@ -27,7 +27,6 @@ Template.restaurantPage.events({
 		var metaContext = Restaurants.findOne({_id: this.restaurant._id});
     	var uploader = new Slingshot.Upload("myFileUploads", metaContext);
     	var id = this.restaurant._id;
-
 		uploader.send(document.getElementById('input').files[0], function (error, downloadUrl) {
 			if (error) {
 	    	// Log service detailed response
@@ -35,14 +34,15 @@ Template.restaurantPage.events({
 	    		alert (error);
 	  		}
 		  	else {
-		  		console.log(metaContext);
 		    	Restaurants.update({_id: metaContext._id}, {$push: {"images": downloadUrl}});
 		  	}
+		  	imageUpload.set(uploader);
 		});
+  	},
+  	'mouseenter .profile-background': function(event, template) {
+  		$('.photoUpload').animate({'bottom': '0px'}, 500);
+  	},
+  	'mouseleave .profile-background, click .profile-background': function(event, template) {
+  		$('.photoUpload').animate({'bottom': '-50px'}, 500);
   	}
 });
-
-// Template.restaurantPage.rendered = function() {
-// 	var profilePic = _.findWhere(this.data.restaurant.images, {defaultPic: true});
-// 	Session.set('profilePic', profilePic.pic);
-// }

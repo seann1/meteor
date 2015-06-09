@@ -146,26 +146,28 @@ body {
 /* line 120, ../sass/screen.scss */
 .profile-background {
   background-color: #c9c9c9;
+  overflow: hidden;
 }
-/* line 122, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 .profile-background .profilePic {
   width: 75%;
   margin: 0 auto;
 }
 
-/* line 128, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 .photoUpload {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 100%;
   left: 0;
-  bottom: 0;
-  text-align: center;
+  bottom: -50px;
+  border-width: 0px;
+  text-align: left;
 }
-/* line 136, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 .photoUpload .glyphicon-camera {
   margin-top: 5px;
-  font-size: 2em;
+  font-size: 2.7em;
   color: white;
 }
