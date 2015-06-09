@@ -44,8 +44,13 @@ Template.restaurantPage.events({
 	  		}
 		  	else {
 		  		imageUpload.set(uploader);
-		  		Restaurants.update({_id: metaContext._id, "images.$.defaultPic": true }, {$set: {"images.$.defaultPic": false} });
-		    	Restaurants.update({_id: metaContext._id}, {$push: { images: {"defaultPic": true, "pic": downloadUrl} }});
+		  		Meteor.call('clearDefault', metaContext, function(error, result) {
+		  			if (error) {
+		  				console.log("bad");
+		  			} else {
+		  				Restaurants.update({_id: metaContext._id}, {$push: { images: {"defaultPic": true, "pic": downloadUrl} }});
+		  			}
+		  		});
 		  	}
 		});
   	},

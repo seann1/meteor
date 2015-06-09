@@ -68,5 +68,8 @@ Meteor.methods({
 		return {
 			_id: restaurantAttributes._id
 		}
+	},
+	clearDefault: function(restaurantAttributes) {
+		Restaurants.update({_id: restaurantAttributes._id, "images.defaultPic": true}, {$set: {"images.$.defaultPic": false} }, {multi: true});
 	}
 })
