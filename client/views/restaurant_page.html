@@ -41,9 +41,12 @@
 			</form>
 			<div class="progress">
     			<div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
-      				<span class="sr-only">{{progress}}% Complete</span>
+      				<span>{{progress}}% Complete</span>
     			</div>
   			</div>
+  			{{#if success}}
+    			<div>HI</div>
+    		{{/if}}
   		 </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

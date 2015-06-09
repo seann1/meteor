@@ -25,11 +25,11 @@ Restaurants.attachSchema(new SimpleSchema({
 	images: {
 		type: [Object]
 	},
-	'images.$.pic': {
-		type: String
-	},
-	'images.$.defaultPic': {
+	"images.$.defaultPic": {
 		type: Boolean
+	},
+	"images.$.pic": {
+		type: String
 	}
 }));
 

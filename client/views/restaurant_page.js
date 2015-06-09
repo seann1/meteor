@@ -17,8 +17,13 @@ Template.restaurantPage.helpers({
 	progress: function () {
         var upload = imageUpload.get();
         if (upload)
-        	console.log(upload.progress());
             return Math.round(upload.progress() * 100);
+    },
+    success: function () {
+    	var upload = imageUpload.get();
+    	if (upload.progress() * 100 === 100) {
+    		return true;
+    	}
     }
 });
 
