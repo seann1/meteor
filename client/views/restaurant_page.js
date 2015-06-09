@@ -2,6 +2,7 @@ var imageUpload = new ReactiveVar();
 
 Template.restaurantPage.onRendered(function() {
 	$('.photoUpload').slideUp(0);
+	Session.set('wantDelete', false);
 });
 
 Template.restaurantPage.helpers({
@@ -10,18 +11,22 @@ Template.restaurantPage.helpers({
 			return true
 		}
 	},
+
 	restaurant: function() {
 		return this.restaurant;
 	},
+
 	profilePic: function() {
 		var profilePic = _.findWhere(this.restaurant.images, {defaultPic: true});
 		return profilePic.pic
 	},
+
 	progress: function () {
         var upload = imageUpload.get();
         if (upload)
             return Math.round(upload.progress() * 100);
     },
+
     success: function () {
     	var upload = imageUpload.get();
     	if ($("#input").val() !== ('' || undefined)) {
@@ -30,10 +35,19 @@ Template.restaurantPage.helpers({
 	    		return true;
 	    	}
 	    }
-    }
+    },
+    
+    wantDelete: function () {
+    	if (Session.get('wantDelete') === false) {
+    		return false;
+    	} else {
+    		return true;
+    	}
+    }	
 });
 
 Template.restaurantPage.events({
+
 	'change #input': function(event, template) {
 		var metaContext = Restaurants.findOne({_id: this.restaurant._id});
     	var uploader = new Slingshot.Upload("myFileUploads", metaContext);
@@ -56,13 +70,22 @@ Template.restaurantPage.events({
 		  	}
 		});
   	},
+
   	'mouseenter .profile-background': function(event, template) {
   		$('.photoUpload').slideDown(500);
   	},
+
   	'mouseleave .profile-background': function(event, template) {
   		$('.photoUpload').slideUp(500);
   	},
+
   	'click .profile-background': function(event, template) {
   		imageUpload.set();
+  	},
+  	'click .deleteRestaurant': function(event, template) {
+  		Session.set('wantDelete', true);
+  	},
+  	'click .noDelete': function(event, template) {
+  		Session.set('wantDelete', false);
   	}
 });

@@ -9,6 +9,10 @@ body {
 	overflow-x: hidden;
 }
 
+// .inlineBlock {
+//   display: inline-block;
+// }
+
 a:hover {
 	text-decoration: none;
 }
@@ -47,6 +51,30 @@ a:hover {
 	padding: 10px;
 	background-color: rgba(0, 0, 0, 0.5);
 	color: white;
+}
+
+.areYouSure {
+  padding: 10px;
+  padding-bottom: 37px;
+  background-color: #f4ed9c;
+  display: inline;
+
+  .choiceText {
+    color: #00d389;
+    position: relative;
+    font-size: 1.5em;
+    float: left;
+  }
+  .noDelete {
+    float: left;
+    position: relative;
+    margin-left: 5px;
+  }
+  .delete {
+    float: left;
+    position: relative;
+    margin-left: 5px;
+  }
 }
 
 .restaurantAddress {

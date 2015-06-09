@@ -1,12 +1,26 @@
 <template name="restaurantPage">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-10 restaurantTitle">
-				<h1>{{restaurant.name}}</h1>
-			</div>
+			{{#if wantDelete}}
+				<div class="col-md-6 restaurantTitle inlineBlock">
+					<h1>{{restaurant.name}}</h1>
+				</div>
+				<div class="col-md-4 areYouSure inlineBlock">
+					<p class="choiceText">Are You Sure?</p>
+					<button class="btn btn-danger delete">Delete</button>
+					<button class="btn btn-default noDelete">Cancel</button>
+				</div>
+			{{else}}
+				<div class="col-md-10 restaurantTitle inlineBlock">
+					<h1>{{restaurant.name}}</h1>
+				</div>
+			{{/if}}
 			<div class="col-md-2">
 				{{#if userCanEdit}}
 					<a class="btn btn-success" href="{{pathFor 'editRestaurant'  _id=restaurant._id}}">Edit</a>
+					{{#unless wantDelete}}
+						<a class="btn btn-danger deleteRestaurant">Delete</a>
+					{{/unless}}
 				{{/if}}
 			</div>
 		</div>
@@ -38,11 +52,13 @@
 			<form action="/">
 				<input type="file" id="input" name="pic" accept="image/*">
 			</form>
+
 			<div class="progress">
     			<div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
       				<span>{{progress}}% Complete</span>
     			</div>
   			</div>
+
   			{{#if success}}
     			<div>HI</div>
     		{{/if}}
