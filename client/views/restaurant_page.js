@@ -39,9 +39,10 @@ Template.restaurantPage.events({
 	    		alert (error);
 	  		}
 		  	else {
-		    	Restaurants.update({_id: metaContext._id}, {$push: {"images": downloadUrl}});
+		  		imageUpload.set(uploader);
+		  		Restaurants.update({_id: metaContext._id, "images.$.defaultPic": true }, {$set: {"images.$.defaultPic": false} });
+		    	Restaurants.update({_id: metaContext._id}, {$push: { images: {"defaultPic": true, "pic": downloadUrl} }});
 		  	}
-		  	imageUpload.set(uploader);
 		});
   	},
   	'mouseenter .profile-background': function(event, template) {
