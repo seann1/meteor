@@ -13,6 +13,14 @@ a:hover {
 	text-decoration: none;
 }
 
+.inline {
+  display: inline;
+}
+
+.block {
+  display: block;
+}
+
 .welcome {
 	background-color: #efd5e1; // Old browsers
 	@include filter-gradient(#efd5e1, #cce5e4, vertical); // IE6-9
@@ -230,4 +238,18 @@ body {
   border-width: 0px;
   padding: 0px;
   outline: none;
+}
+
+.saveTitle {
+  float: right;
+  margin-top: 12px;
+}
+
+.cancelTitle {
+  float: right;
+  margin-top: 12px;
+}
+
+.noPadding {
+  padding: 0px !important;
 }

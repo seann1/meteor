@@ -3,16 +3,25 @@
 		{{#if editTitle}}
 			{{> titleInput}}
 		{{else}}
-			<h1 class="titleText">{{restaurant.name}}{{#if userCanEdit}} <span class="glyphicon glyphicon-pencil edit-glyph" aria-hidden="true"></span>{{/if}}</h1>
+			<div class="col-md-12 noPadding">
+				<h1 class="titleText">{{restaurant.name}}{{#if userCanEdit}} <span class="glyphicon glyphicon-pencil edit-glyph" aria-hidden="true"></span>{{/if}}</h1>
+			</div>
 		{{/if}}
 	</div>
 </template>
 
 <template name="titleInput">
 	<form>
-		<h1><input type="text" name="restaurantTitle" size="40" value="{{restaurant.name}}" class="editTitle"/></h1>
-		{{#if edited}}
-		<button type="submit" class="btn btn-primary margin">Save</button>
-		{{/if}}
+		<div class="col-md-8 noPadding">
+			<h1><input type="text" name="restaurantTitle" size="40" value="{{restaurant.name}}" class="editTitle"/></h1>
+		</div>
+		<div class="col-md-4">	
+			<div class="row">
+				<button type="submit" class="btn btn-primary saveTitle">Save</button>
+			</div>
+			<div class="row">
+				<button class="btn btn-primary cancelTitle">Cancel</button>
+			</div>
+		</div>
 	</form>
 </template>
