@@ -46,8 +46,7 @@ Meteor.methods({
 			images: [{defaultPic: true, pic: 'https://sean-carty.s3-us-west-2.amazonaws.com/missing_screen.png'}]
 		});
 
-		Restaurants.insert(restaurant);
-		return restaurant._id
+		return Restaurants.insert(restaurant);
 	},
 
 	editRestaurant: function(restaurantAttributes) {

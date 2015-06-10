@@ -82,7 +82,8 @@ Template.newRestaurant.events({
 			if(error) {
 				throwError(error.reason);
 			} else {
-				Router.go('restaurants');
+				console.log(result);
+				Router.go('/restaurants/'+ result);
 			}
 		});
 
