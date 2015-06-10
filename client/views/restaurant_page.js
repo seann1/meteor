@@ -87,5 +87,10 @@ Template.restaurantPage.events({
   	},
   	'click .noDelete': function(event, template) {
   		Session.set('wantDelete', false);
+  	},
+  	'click .delete': function(event, template) {
+		Meteor.call('deleteRestaurant', this.restaurant, function(error, result) {
+
+		});  		
   	}
 });

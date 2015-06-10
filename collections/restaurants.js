@@ -69,6 +69,22 @@ Meteor.methods({
 			_id: restaurantAttributes._id
 		}
 	},
+	deleteRestaurant: function(restaurantAttributes) {
+		var notAuthorized = function(userId, restaurantUserId) {
+			if (userId !== restaurantUserId) {
+				return true
+			} else {
+				return false
+			};
+		};
+		
+		if (notAuthorized(Meteor.user()._id, restaurantAttributes.userId)) {
+			console.log('error');
+		} else {
+			Restaurants.remove({_id: restaurantAttributes._id});
+			Router.go('/restaurants');
+		}
+	},
 	clearDefault: function(restaurantAttributes) {
 		Restaurants.update({_id: restaurantAttributes._id, "images.defaultPic": true}, {$set: {"images.$.defaultPic": false} }, {multi: true});
 	}

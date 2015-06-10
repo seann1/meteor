@@ -1,11 +1,12 @@
 <template name="home">
 	<div class="welcome">
-		<h1>Welcome to CartApp</h1>
 		{{#each restaurants}}
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="marge">
-						<div class="enter-block"><h2><a href="{{pathFor 'restaurantPage'}}" >{{name}}</a></h2></div>
+						<div class="enter-block">
+							<h2><a href="{{pathFor 'restaurantPage'}}" >{{name}}</a></h2>
+						</div>
 				</div>
 			</div>
 		</div>

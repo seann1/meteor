@@ -17,8 +17,8 @@
 			{{/if}}
 			<div class="col-md-2">
 				{{#if userCanEdit}}
-					<a class="btn btn-success" href="{{pathFor 'editRestaurant'  _id=restaurant._id}}">Edit</a>
 					{{#unless wantDelete}}
+						<a class="btn btn-success" href="{{pathFor 'editRestaurant'  _id=restaurant._id}}">Edit</a>
 						<a class="btn btn-danger deleteRestaurant">Delete</a>
 					{{/unless}}
 				{{/if}}
