@@ -9,16 +9,11 @@ body {
 	overflow-x: hidden;
 }
 
-// .inlineBlock {
-//   display: inline-block;
-// }
-
 a:hover {
 	text-decoration: none;
 }
 
 .welcome {
-	// needs latest Compass, add '@import "compass"' to your scss
 	background-color: #efd5e1; // Old browsers
 	@include filter-gradient(#efd5e1, #cce5e4, vertical); // IE6-9
 	@include background-image(linear-gradient(top,  #efd5e1 0%,#cce5e4 100%));
@@ -45,7 +40,6 @@ a:hover {
 .enter-block {
 	background-color: rgba(160, 160, 160, 0.8);
 	padding: 10px;
-	// margin: 10px 0 10px 0;
   a {
     color: #000000;
   }
@@ -196,4 +190,8 @@ body {
 .progress {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.myRestaurants {
+  color: #e0e0e0;
 }
