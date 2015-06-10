@@ -11,9 +11,7 @@
 					<button class="btn btn-default noDelete">Cancel</button>
 				</div>
 			{{else}}
-				<div class="col-md-10 restaurantTitle inlineBlock">
-					<h1>{{restaurant.name}}</h1>
-				</div>
+				{{> restaurantTitle}}
 			{{/if}}
 			<div class="col-md-2">
 				{{#if userCanEdit}}

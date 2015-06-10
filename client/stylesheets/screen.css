@@ -81,61 +81,65 @@ a:hover {
 
 /* line 63, ../sass/screen.scss */
 .restaurantTitle {
-  padding: 10px;
+  height: 100px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
 }
+/* line 67, ../sass/screen.scss */
+.restaurantTitle .titleText {
+  padding-top: 1px;
+}
 
-/* line 69, ../sass/screen.scss */
+/* line 72, ../sass/screen.scss */
 .areYouSure {
   padding: 10px;
   padding-bottom: 37px;
   background-color: #f4ed9c;
   display: inline;
 }
-/* line 75, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 .areYouSure .choiceText {
   color: #00d389;
   position: relative;
   font-size: 1.5em;
   float: left;
 }
-/* line 81, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 .areYouSure .noDelete {
   float: right;
   position: relative;
   margin-left: 5px;
 }
-/* line 86, ../sass/screen.scss */
+/* line 89, ../sass/screen.scss */
 .areYouSure .delete {
   float: right;
   position: relative;
   margin-left: 5px;
 }
 
-/* line 93, ../sass/screen.scss */
+/* line 96, ../sass/screen.scss */
 .restaurantAddress {
   padding: 5px;
   font-weight: bold;
   color: #bbff00;
 }
 
-/* line 99, ../sass/screen.scss */
+/* line 102, ../sass/screen.scss */
 .restaurantImage {
   height: 200px;
 }
 
-/* line 103, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 .margin {
   margin-top: 10px;
 }
 
-/* line 107, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 body {
   background-color: #3f3f3f;
 }
 
-/* line 111, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 .spinner {
   margin: 100px auto;
   width: 32px;
@@ -143,7 +147,7 @@ body {
   position: relative;
 }
 
-/* line 118, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
 .cube1, .cube2 {
   background-color: #333;
   width: 10px;
@@ -155,7 +159,7 @@ body {
   animation: cubemove 1.8s infinite ease-in-out;
 }
 
-/* line 130, ../sass/screen.scss */
+/* line 133, ../sass/screen.scss */
 .cube2 {
   -webkit-animation-delay: -0.9s;
   animation-delay: -0.9s;
@@ -197,21 +201,21 @@ body {
     -webkit-transform: rotate(-360deg);
   }
 }
-/* line 161, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 .profile-background {
   background-color: #c9c9c9;
   overflow: hidden;
   height: 200px;
 }
 
-/* line 167, ../sass/screen.scss */
+/* line 170, ../sass/screen.scss */
 .profilePic {
   position: absolute;
   bottom: 0;
   height: 200px;
 }
 
-/* line 173, ../sass/screen.scss */
+/* line 176, ../sass/screen.scss */
 .photoUpload {
   position: absolute;
   left: 0;
@@ -223,20 +227,58 @@ body {
   width: 100%;
   text-align: left;
 }
-/* line 183, ../sass/screen.scss */
+/* line 186, ../sass/screen.scss */
 .photoUpload .glyphicon-camera {
   margin-top: 5px;
   font-size: 2.7em;
   color: white;
 }
 
-/* line 190, ../sass/screen.scss */
+/* line 193, ../sass/screen.scss */
 .progress {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-/* line 195, ../sass/screen.scss */
+/* line 198, ../sass/screen.scss */
 .myRestaurants {
   color: #e0e0e0;
+}
+
+/* line 202, ../sass/screen.scss */
+.errors {
+  position: fixed;
+  z-index: 10000;
+  padding: 10px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  pointer-events: none;
+}
+
+/* line 212, ../sass/screen.scss */
+.alert {
+  animation: fadeOut 2700ms ease-in 0s 1 forwards;
+  -webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards;
+  -moz-animation: fadeOut 2700ms ease-in 0s 1 forwards;
+  width: 250px;
+  float: right;
+  clear: both;
+  margin-bottom: 5px;
+  pointer-events: auto;
+}
+
+/* line 223, ../sass/screen.scss */
+.edit-glyph {
+  font-size: .5em;
+  padding-bottom: 3px;
+}
+
+/* line 228, ../sass/screen.scss */
+.editTitle {
+  background-color: transparent;
+  border-width: 0px;
+  padding: 0px;
+  outline: none;
 }

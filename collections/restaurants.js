@@ -1,13 +1,5 @@
 Restaurants = new Meteor.Collection('restaurants', {});
 
-if (Meteor.isServer) {
-      // wait for 5 seconds
-      Meteor._sleepForMs(5000);
-    } else {
-
-    }
-
-
 Restaurants.attachSchema(new SimpleSchema({
 	name: {
 		type: String,
@@ -50,6 +42,13 @@ Meteor.methods({
 	},
 
 	editRestaurant: function(restaurantAttributes) {
+		var blankField = function(name, address) {
+			if (name === "" || address === "") {
+				return true;
+			} else {
+				return false;
+			}
+		};
 		var notAuthorized = function(userId, restaurantUserId) {
 			if (userId !== restaurantUserId) {
 				return true
@@ -58,14 +57,12 @@ Meteor.methods({
 			};
 		};
 
-		if (notAuthorized(Meteor.user()._id, restaurantAttributes.userId)) {
-			console.log("hello");
+		if (notAuthorized(Meteor.user()._id, restaurantAttributes.userId)){
+			throw new Meteor.Error('invalid-edit', 'You are not authorized to edit.');
+		} else if (blankField(restaurantAttributes.name, restaurantAttributes.address)) {
+			throw new Meteor.Error('invalid-edit', 'Name and address can not be blank.');
 		} else {
-			Restaurants.update({_id: restaurantAttributes._id}, {$set: restaurantAttributes});
-		}
-
-		return {
-			_id: restaurantAttributes._id
+			return Restaurants.update({_id: restaurantAttributes._id}, {$set: restaurantAttributes});
 		}
 	},
 	deleteRestaurant: function(restaurantAttributes) {

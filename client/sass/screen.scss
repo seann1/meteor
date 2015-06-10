@@ -61,9 +61,12 @@ a:hover {
 }
 
 .restaurantTitle {
-	padding: 10px;
+	height: 100px;
 	background-color: rgba(0, 0, 0, 0.5);
 	color: white;
+  .titleText {
+    padding-top: 1px;
+  }
 }
 
 .areYouSure {
@@ -194,4 +197,37 @@ body {
 
 .myRestaurants {
   color: #e0e0e0;
+}
+
+.errors{
+  position: fixed;
+  z-index: 10000;
+  padding: 10px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  pointer-events: none;
+}
+.alert {
+          animation: fadeOut 2700ms ease-in 0s 1 forwards;
+  -webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards;
+     -moz-animation: fadeOut 2700ms ease-in 0s 1 forwards;
+  width: 250px;
+  float: right;
+  clear: both;
+  margin-bottom: 5px;
+  pointer-events: auto;
+}
+
+.edit-glyph {
+  font-size: .5em;
+  padding-bottom: 3px;
+}
+
+.editTitle {
+  background-color: rgba(0, 0, 0, 0.0);
+  border-width: 0px;
+  padding: 0px;
+  outline: none;
 }

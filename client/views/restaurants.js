@@ -50,8 +50,8 @@ Template.editRestaurant.events({
 		var restaurantProperties = {
 			name: $name.val(),
 			address: $address.val(),
-			userId: this.userId,
-			_id: this._id
+			userId: this.restaurant.userId,
+			_id: this.restaurant._id
 			
 		}
 
@@ -59,7 +59,7 @@ Template.editRestaurant.events({
 			if (error) {
 				throwError(error.reason);
 			} else {
-				Router.go('restaurants');
+				Router.go('/restaurants/'+ restaurantProperties._id);
 			}
 		})
 
