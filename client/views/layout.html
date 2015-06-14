@@ -17,9 +17,9 @@
 	    </div>
 	    <div class="navbar-collapse collapse">
 	        <ul class="nav navbar-nav">
-	          {{#if currentUser}}
-						<li><a href="{{pathFor 'restaurants'}}">My Restaurants</a></li>
-						{{/if}}
+	        	{{#if currentUser}}
+					<li><a href="{{pathFor 'restaurants'}}">My Restaurants</a></li>
+				{{/if}}
 	        </ul>
 	        <ul class="nav navbar-nav navbar-right">
 	            {{> loginButtons }}
@@ -28,6 +28,7 @@
 	  </div>
 	</div>
 		{{> errors}}
+	<div class="wrapper">
 		{{> yield}}
-
+	</div>
 </template>

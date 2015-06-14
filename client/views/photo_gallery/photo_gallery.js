@@ -1,5 +1,4 @@
 Template.photoGallery.onRendered(function() {
-	$('.photoViewerModal').hide().fadeIn();
 	$('#carousel').slick({
       dots: true,
       arrows: true
@@ -9,5 +8,12 @@ Template.photoGallery.onRendered(function() {
 Template.photoGallery.helpers({
 	restaurantPhotos: function() {
 		return this.restaurant.images
+	}
+});
+
+Template.photoGallery.events({
+	'click .photoViewerModal': function(e, template) {
+		if ($(e.target).hasClass('photoViewerModal'))
+			Session.set('photoViewer', false);
 	}
 })

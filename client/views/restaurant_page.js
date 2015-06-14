@@ -4,6 +4,20 @@ Template.restaurantPage.onRendered(function() {
 	$('.photoUpload').slideUp(0);
 	Session.set('wantDelete', false);
 	Session.set('photoViewer', false);
+
+	this.find('.wrapper')._uihooks = {
+	    insertElement: function (node, next) {
+	    	console.log(node);
+	      $(node)
+	        .hide()
+	        .insertBefore(next)
+	        .fadeIn();
+	    },
+	    removeElement: function (node, next) {
+	    	$(node)
+	        .fadeOut();
+	    }
+	}
 });
 
 Template.restaurantPage.helpers({
