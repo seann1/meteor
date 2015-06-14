@@ -7,4 +7,4 @@ Template.home.helpers({
 	restaurants: function() {
 		return Restaurants.find();
 	}
-})
+});

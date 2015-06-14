@@ -3,6 +3,7 @@ var imageUpload = new ReactiveVar();
 Template.restaurantPage.onRendered(function() {
 	$('.photoUpload').slideUp(0);
 	Session.set('wantDelete', false);
+	Session.set('photoViewer', false);
 });
 
 Template.restaurantPage.helpers({
@@ -21,13 +22,13 @@ Template.restaurantPage.helpers({
 		return profilePic.pic
 	},
 
-	progress: function () {
+	progress: function() {
         var upload = imageUpload.get();
         if (upload)
             return Math.round(upload.progress() * 100);
     },
 
-    success: function () {
+    success: function() {
     	var upload = imageUpload.get();
     	if ($("#input").val() !== ('' || undefined)) {
 	    	if (upload.progress() * 100 === 100) {
@@ -43,11 +44,18 @@ Template.restaurantPage.helpers({
     	} else {
     		return true;
     	}
+    },
+
+    photoViewer: function() {
+    	if (Session.get('photoViewer') === false) {
+    		return false;
+    	} else {
+    		return true;
+    	}
     }	
 });
 
 Template.restaurantPage.events({
-
 	'change #input': function(event, template) {
 		var metaContext = Restaurants.findOne({_id: this.restaurant._id});
     	var uploader = new Slingshot.Upload("myFileUploads", metaContext);
@@ -92,5 +100,8 @@ Template.restaurantPage.events({
 		Meteor.call('deleteRestaurant', this.restaurant, function(error, result) {
 
 		});  		
+  	},
+  	'click .profilePic': function(e, template) {
+  		Session.set('photoViewer', true);
   	}
 });

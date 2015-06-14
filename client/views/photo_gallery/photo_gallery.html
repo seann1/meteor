@@ -1,0 +1,9 @@
+<template name="photoGallery">
+	<div class="photoViewerModal">
+		<div id="carousel">
+			{{#each restaurantPhotos}}
+		    	<div><img src="{{this.pic}}"/></div>
+		    {{/each}}
+  		</div>
+	</div>
+</template>

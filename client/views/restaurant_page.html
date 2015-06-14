@@ -1,4 +1,7 @@
 <template name="restaurantPage">
+		{{#if photoViewer}}
+			{{> photoGallery}}
+		{{/if}}
 	<div class="container">
 		<div class="row">
 			{{#if wantDelete}}
@@ -39,6 +42,7 @@
 		</div>
 	</div>
 
+<!-- Photo Upload Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
@@ -68,5 +72,5 @@
 	    </div>
 	  </div>
 	</div>
-
+<!-- -->
 </template>

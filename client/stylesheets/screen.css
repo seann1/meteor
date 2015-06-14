@@ -223,9 +223,10 @@ body {
   position: absolute;
   bottom: 0;
   height: 200px;
+  cursor: pointer;
 }
 
-/* line 184, ../sass/screen.scss */
+/* line 185, ../sass/screen.scss */
 .photoUpload {
   position: absolute;
   left: 0;
@@ -237,25 +238,25 @@ body {
   width: 100%;
   text-align: left;
 }
-/* line 194, ../sass/screen.scss */
+/* line 195, ../sass/screen.scss */
 .photoUpload .glyphicon-camera {
   margin-top: 5px;
   font-size: 2.7em;
   color: white;
 }
 
-/* line 201, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 .progress {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-/* line 206, ../sass/screen.scss */
+/* line 207, ../sass/screen.scss */
 .myRestaurants {
   color: #e0e0e0;
 }
 
-/* line 210, ../sass/screen.scss */
+/* line 211, ../sass/screen.scss */
 .errors {
   position: fixed;
   z-index: 10000;
@@ -267,7 +268,7 @@ body {
   pointer-events: none;
 }
 
-/* line 220, ../sass/screen.scss */
+/* line 221, ../sass/screen.scss */
 .alert {
   animation: fadeOut 2700ms ease-in 0s 1 forwards;
   -webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards;
@@ -279,14 +280,14 @@ body {
   pointer-events: auto;
 }
 
-/* line 231, ../sass/screen.scss */
+/* line 232, ../sass/screen.scss */
 .edit-glyph {
   font-size: .5em;
   padding-bottom: 3px;
   cursor: pointer;
 }
 
-/* line 237, ../sass/screen.scss */
+/* line 238, ../sass/screen.scss */
 .editTitle {
   background-color: transparent;
   border-width: 0px;
@@ -294,19 +295,51 @@ body {
   outline: none;
 }
 
-/* line 244, ../sass/screen.scss */
+/* line 245, ../sass/screen.scss */
 .saveTitle {
   float: right;
   margin-top: 12px;
 }
 
-/* line 249, ../sass/screen.scss */
+/* line 250, ../sass/screen.scss */
 .cancelTitle {
   float: right;
   margin-top: 12px;
 }
 
-/* line 254, ../sass/screen.scss */
+/* line 255, ../sass/screen.scss */
 .noPadding {
   padding: 0px !important;
+}
+
+/* line 259, ../sass/screen.scss */
+.photoViewerModal {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  overflow: hidden;
+  outline: 0;
+}
+
+/* line 271, ../sass/screen.scss */
+#carousel {
+  border: 1px solid black;
+  width: 90%;
+  position: relative;
+  top: 100px;
+  left: 100px;
+}
+
+/* line 279, ../sass/screen.scss */
+#carousel div {
+  width: 100%;
+}
+
+/* line 283, ../sass/screen.scss */
+.slick-prev:before, .slick-next:before {
+  color: silver;
 }
