@@ -283,9 +283,10 @@ body {
 .edit-glyph {
   font-size: .5em;
   padding-bottom: 3px;
+  cursor: pointer;
 }
 
-/* line 236, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 .editTitle {
   background-color: transparent;
   border-width: 0px;
@@ -293,19 +294,19 @@ body {
   outline: none;
 }
 
-/* line 243, ../sass/screen.scss */
+/* line 244, ../sass/screen.scss */
 .saveTitle {
   float: right;
   margin-top: 12px;
 }
 
-/* line 248, ../sass/screen.scss */
+/* line 249, ../sass/screen.scss */
 .cancelTitle {
   float: right;
   margin-top: 12px;
 }
 
-/* line 253, ../sass/screen.scss */
+/* line 254, ../sass/screen.scss */
 .noPadding {
   padding: 0px !important;
 }
