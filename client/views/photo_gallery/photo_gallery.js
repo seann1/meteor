@@ -1,19 +1,16 @@
 Template.photoGallery.onRendered(function() {
-	$('#carousel').slick({
-      dots: true,
-      arrows: true
-    });
 });
 
 Template.photoGallery.helpers({
-	restaurantPhotos: function() {
-		return this.restaurant.images
+	currentPic: function() {
+		return this.restaurant.images[0]
 	}
 });
 
 Template.photoGallery.events({
 	'click .photoViewerModal': function(e, template) {
 		if ($(e.target).hasClass('photoViewerModal'))
+			$('.photoViewerModal').remove();
 			Session.set('photoViewer', false);
 	}
-})
+});

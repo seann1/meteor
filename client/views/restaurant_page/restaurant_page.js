@@ -1,9 +1,12 @@
 var imageUpload = new ReactiveVar();
 
+Template.restaurantPage.onCreated(function() {
+	Session.set('photoViewer', false);
+});
+
 Template.restaurantPage.onRendered(function() {
 	$('.photoUpload').slideUp(0);
 	Session.set('wantDelete', false);
-	Session.set('photoViewer', false);
 
 	this.find('.wrapper')._uihooks = {
 	    insertElement: function (node, next) {
