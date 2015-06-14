@@ -35,6 +35,25 @@ Template.titleInput.onRendered(function() {
 Template.titleInput.events({
 	'keypress .editTitle, keydown .editTitle, keyup .editTitle': function(event, template) {
 		inputTitle.set(event.target.value);
+	},
+	'submit form': function(e, template) {
+	e.preventDefault();
+
+	var $name = $(e.target).find('[name=restaurantTitle]');
+
+	var restaurantProperties = {
+		name: $name.val(),
+		_id: this.restaurant._id	
+	}
+
+	Meteor.call('editRestaurant', restaurantProperties, function(error, result) {
+		if (error) {
+			throwError(error.reason);
+		} else {
+			Router.go('/restaurants/'+ restaurantProperties._id);
+		}
+	});
+
 	}
 });
 
