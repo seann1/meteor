@@ -48,13 +48,19 @@ a:hover {
 .enter-block {
 	background-color: rgba(160, 160, 160, 0.8);
 	padding: 10px;
+  cursor: pointer;
+  .welcome-pic {
+    height: 90px;
+  }
   a {
+    font-size: 2em;
+    // float: right;
     color: #000000;
   }
-  a:hover {
-    color: #f48600;
-    @include transition(all 0.3s);
-  }
+  // a:hover {
+  //   color: #f48600;
+  //   @include transition(all 0.3s);
+  // }
 }
 
 .restaurantRow {
@@ -258,6 +264,7 @@ body {
 
 .photoViewerModal {
   position: fixed;
+  -webkit-filter: blur(5px);
   background-color: rgba(0,0,0,0.5);
   top: 0;
   right: 0;
