@@ -276,13 +276,13 @@ body {
 .carousel {
   height: 520px;
   width: 880px;
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   .photoInfo {
-    background-color: white;
+    background-color: #dddddd;
     height: 100%;
   }
 }
@@ -290,6 +290,24 @@ body {
 .photoContainer {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.glyphicon-menu-left {
+  color: white;
+  float: left;
+  margin: auto;
+  position: relative;
+  top: 240px;
+  font-size: 4em;
+}
+
+.glyphicon-menu-right {
+  position: relative;
+  color: white;
+  float: right;
+  margin: auto;
+  top: 240px;
+  font-size: 4em;
 }
 
 .photoContainer:hover {
