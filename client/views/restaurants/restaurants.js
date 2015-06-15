@@ -66,7 +66,35 @@ Template.editRestaurant.events({
 	}
 });
 
+Template.newRestaurant.onRendered(function() {
+	$('.newNameInput').focus();
+})
+
 Template.newRestaurant.events({
+	'focus .newNameInput': function(e, template) {
+		$('.newName').addClass('focusLabel');
+	},
+
+	'blur .newNameInput': function(e, template) {
+		$('.newName').removeClass('focusLabel');
+	},
+
+	'focus .newAddressInput': function(e, template) {
+		$('.newAddress').addClass('focusLabel');
+	},
+
+	'blur .newAddressInput': function(e, template) {
+		$('.newAddress').removeClass('focusLabel');
+	},
+
+	'focus .newZipInput': function(e, template) {
+		$('.newZip').addClass('focusLabel');
+	},
+
+	'blur .newZipInput': function(e, template) {
+		$('.newZip').removeClass('focusLabel');
+	},
+
 	'submit form': function(e, template) {
 		e.preventDefault();
 
@@ -87,5 +115,8 @@ Template.newRestaurant.events({
 			}
 		});
 
+	},
+	'click .cancelButton': function(e, template) {
+		Router.go('/restaurants/');
 	}
 })

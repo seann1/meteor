@@ -386,3 +386,46 @@ body {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+/* line 328, ../sass/screen.scss */
+.newName {
+  font-size: 3.5em;
+  color: #a3a3a3;
+  transition: color, 1s;
+}
+
+/* line 334, ../sass/screen.scss */
+.newAddress, .newZip {
+  font-size: 2.5em;
+  color: #a3a3a3;
+  transition: color, 1s;
+}
+
+/* line 340, ../sass/screen.scss */
+.cityState {
+  font-size: 2em;
+  color: #2d2d2d;
+}
+
+/* line 345, ../sass/screen.scss */
+.newNameInput, .newAddressInput, .newZipInput {
+  background-color: #86a09c;
+  color: black;
+  border-radius: 0px;
+  border-width: 0px;
+  height: 60px;
+  font-size: 3em;
+}
+/* line 352, ../sass/screen.scss */
+.newNameInput:focus, .newAddressInput:focus, .newZipInput:focus {
+  background-color: #c9eae9;
+  transition: background-color, 1s;
+}
+
+/* line 358, ../sass/screen.scss */
+.focusLabel {
+  color: #e5e5e5;
+  transition: color, 1s;
+  text-shadow: 0 5px 5px black;
+  text-shadow: 0 5px 5px 6px black;
+}
