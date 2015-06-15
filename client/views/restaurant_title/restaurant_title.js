@@ -35,6 +35,7 @@ Template.titleInput.onRendered(function() {
 Template.titleInput.events({
 	'keypress .editTitle, keydown .editTitle, keyup .editTitle': function(event, template) {
 		inputTitle.set(event.target.value);
+		console.log(this.restaurant.name);
 	},
 	'submit form': function(e, template) {
 		e.preventDefault();
@@ -57,7 +58,8 @@ Template.titleInput.events({
 		});
 
 	},
-	'click cancelTitle': function() {
+	'click .cancelTitle': function() {
+		$(".editTitle").val(this.restaurant.name);
 		Session.set('editTitle', false);
 	}
 });

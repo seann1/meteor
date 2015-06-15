@@ -405,9 +405,10 @@ body {
 .cityState {
   font-size: 2em;
   color: #2d2d2d;
+  transition: color, 1s;
 }
 
-/* line 345, ../sass/screen.scss */
+/* line 346, ../sass/screen.scss */
 .newNameInput, .newAddressInput, .newZipInput {
   background-color: #86a09c;
   color: black;
@@ -416,16 +417,24 @@ body {
   height: 60px;
   font-size: 3em;
 }
-/* line 352, ../sass/screen.scss */
+/* line 353, ../sass/screen.scss */
 .newNameInput:focus, .newAddressInput:focus, .newZipInput:focus {
   background-color: #c9eae9;
   transition: background-color, 1s;
 }
 
-/* line 358, ../sass/screen.scss */
+/* line 359, ../sass/screen.scss */
 .focusLabel {
-  color: #e5e5e5;
+  color: rgba(255, 255, 255, 0.5);
   transition: color, 1s;
-  text-shadow: 0 5px 5px black;
-  text-shadow: 0 5px 5px 6px black;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 5px 5px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* line 365, ../sass/screen.scss */
+.glowLabel {
+  color: rgba(109, 109, 109, 0.5);
+  transition: color, 1s;
+  text-shadow: rgba(0, 0, 0, 0.4) 0 0 6px, rgba(0, 0, 0, 0.5) 0 0 4px;
+  text-shadow: rgba(0, 0, 0, 0.4) 0 0 6px, rgba(0, 0, 0, 0.5) 0 0 3px 4px inset;
 }

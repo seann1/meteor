@@ -1,19 +1,6 @@
-Router.route('restaurants', {
-	path: '/restaurants',
-	template: 'restaurants',
-	data: function () {
-		return {
-			restaurants: Restaurants.find()
-		}
-	},
-	onBeforeAction: function () {
-		if (!Meteor.user()) {
-			this.redirect('/');
-		} else {
-			this.next();
-		}
-	}
-});
+Template.restaurants.onRendered(function() {
+	Session.set('splitScreen', false);
+})
 
 Template.restaurants.helpers({
 	selectedRestaurantDoc: function() {
@@ -21,6 +8,9 @@ Template.restaurants.helpers({
 	},
 	userRestaurants: function() {
 		return Restaurants.find({userId: Meteor.userId()})
+	},
+	isSplitScreen: function() {
+		return Session.get('splitScreen');
 	}
 });
 
@@ -31,8 +21,15 @@ Template.restaurants.events({
 	},
 	'click #clear-people': function () {
 		Session.set('selectedDocId', null);
+	},
+	'click .newRestaurantSplit': function(e, template) {
+		Session.set('splitScreen', true);
 	}
 });
+
+Template.restaurants.onDestroyed(function() {
+	Session.set('splitScreen', false);
+})
 
 Template.editRestaurant.helpers({
 	restaurant: function() {
@@ -81,10 +78,12 @@ Template.newRestaurant.events({
 
 	'focus .newAddressInput': function(e, template) {
 		$('.newAddress').addClass('focusLabel');
+		$('.cityState').addClass('glowLabel');
 	},
 
 	'blur .newAddressInput': function(e, template) {
 		$('.newAddress').removeClass('focusLabel');
+		$('.cityState').removeClass('glowLabel');
 	},
 
 	'focus .newZipInput': function(e, template) {
