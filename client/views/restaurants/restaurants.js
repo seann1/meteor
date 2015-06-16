@@ -1,16 +1,9 @@
-Template.restaurants.onRendered(function() {
-	Session.set('splitScreen', false);
-})
-
 Template.restaurants.helpers({
 	selectedRestaurantDoc: function() {
 		return Restaurants.findOne({_id: Session.get('selectedDocId')});
 	},
 	userRestaurants: function() {
 		return Restaurants.find({userId: Meteor.userId()})
-	},
-	isSplitScreen: function() {
-		return Session.get('splitScreen');
 	}
 });
 
@@ -21,9 +14,6 @@ Template.restaurants.events({
 	},
 	'click #clear-people': function () {
 		Session.set('selectedDocId', null);
-	},
-	'click .newRestaurantSplit': function(e, template) {
-		Session.set('splitScreen', true);
 	},
 	'click .newRestaurant': function(e, template) {
 		Router.go('/restaurants/new');
@@ -45,10 +35,6 @@ Template.restaurants.events({
 		Router.go('restaurantPage', {_id: this._id});
 	}
 });
-
-Template.restaurants.onDestroyed(function() {
-	Session.set('splitScreen', false);
-})
 
 Template.editRestaurant.helpers({
 	restaurant: function() {

@@ -34,6 +34,10 @@ a:hover {
 	padding: 20px 0 20px 0;
 }
 
+.marginTop {
+  margin-top: 20px;
+}
+
 .btn {
   border-radius: 0px;
   border-width: 0px;
@@ -95,12 +99,21 @@ a:hover {
 }
 
 .areYouSure {
-  padding: 10px;
-  padding-bottom: 37px;
+  height: 100px;
   background-color: #f4ed9c;
   display: inline;
 
+  .transparentDelete {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   .choiceText {
+    margin: 10px;
     color: #00d389;
     position: relative;
     font-size: 1.5em;

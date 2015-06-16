@@ -4,16 +4,18 @@
 			{{> photoGallery}}
 		{{/if}}
 	</div>
-	<div class="container">
+	<div class="container marginTop">
 		<div class="row">
 				{{#if wantDelete}}
 					<div class="col-md-6 restaurantTitle inlineBlock">
 						<h1>{{restaurant.name}}</h1>
 					</div>
 					<div class="col-md-4 areYouSure inlineBlock">
-						<p class="choiceText">Are You Sure?</p>
-						<button class="btn btn-danger delete">Delete</button>
-						<button class="btn btn-default noDelete">Cancel</button>
+						<div class="transparentDelete">
+							<p class="choiceText">Are You Sure?</p>
+							<button class="btn btn-danger delete">Delete</button>
+							<button class="btn btn-default noDelete">Cancel</button>
+						</div>
 					</div>
 				{{else}}
 					{{> restaurantTitle}}
