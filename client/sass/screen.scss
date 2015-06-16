@@ -21,6 +21,11 @@ a:hover {
   display: block;
 }
 
+.navbar {
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
+
 .welcome {
 	background-color: #efd5e1; // Old browsers
 	@include filter-gradient(#efd5e1, #cce5e4, vertical); // IE6-9
@@ -67,9 +72,16 @@ a:hover {
 	background-color: rgba(0,0,0,0.5);
 	margin-top: 10px;
 	margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color, 1s;
+  &:hover {
+    background-color: #8e8e8e;
+    transition: background-color, 1s;
+  }
 	.restaurantName {
 		font-size: 1.5em;
 		color: white;
+    transition: color, 1s;
 	}
 }
 
@@ -366,5 +378,30 @@ body {
   color: rgba(109, 109, 109, 0.5);
   transition: color, 1s;
   @include text-shadow(rgba(black, 0.4) 0 0 6px, rgba(black, 0.5) 0 0 3px 4px inset);
+}
+
+.newRestaurant {
+  background-color: #00b575;
+  height: 60px;
+  width: 150px;
+  text-align: center;
+  transition: background-color, 1s;
+  cursor: pointer;
+  &:hover {
+    background-color: #8e8e8e;
+    transition: background-color, 1s;
+  }
+  a {
+    position: relative;
+    font-size: 1.3em;
+    color: black;
+    top: 30px;
+    transition: color, 1s;
+  }
+}
+
+.myRestaurantsAddress {
+  color: #00b575;
+  transition: color 1s;
 }
 

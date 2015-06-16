@@ -1,16 +1,17 @@
 <template name="restaurants">
+	<div class="newRestaurant"><a href="{{pathFor 'newRestaurant'}}">New Restaurant</a></div>
 	<div class="container">
 		<h1 class="myRestaurants">My Restaurants</h1>
 		{{#each userRestaurants}}
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-7">
 					<div class="restaurantRow">
 						<a href="{{pathFor 'restaurantPage'}}" class="restaurantName">{{name}}</a>
+						<div class="myRestaurantsAddress">{{address}}</div>
 					</div>
 				</div>
 			</div>
 		{{/each}}
-		<a href="{{pathFor 'newRestaurant'}}" class="btn btn-primary">New Restaurant</a>
 	</div>
 </template>
 

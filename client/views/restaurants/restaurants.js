@@ -24,6 +24,25 @@ Template.restaurants.events({
 	},
 	'click .newRestaurantSplit': function(e, template) {
 		Session.set('splitScreen', true);
+	},
+	'click .newRestaurant': function(e, template) {
+		Router.go('/restaurants/new');
+	},
+	'mouseenter .newRestaurant': function(e, template) {
+		$(e.target).find('a').css('color', 'white');
+	},
+	'mouseleave .newRestaurant': function(e, template) {
+		$(e.target).find('a').css('color', 'black');
+	},
+	'mouseenter .restaurantRow': function(e, template) {
+		$(e.target).children().css('color', 'black');
+	},
+	'mouseleave .restaurantRow': function(e, template) {
+		$(e.target).find('a').css('color', 'white');
+		$(e.target).find('.myRestaurantsAddress').css('color', '#00b575');
+	},
+	'click .restaurantRow': function(e, template) {
+		Router.go('restaurantPage', {_id: this._id});
 	}
 });
 
