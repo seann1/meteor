@@ -74,7 +74,8 @@ Template.restaurantPage.helpers({
 
 Template.restaurantPage.events({
 	'change #input': function(event, template) {
-		var metaContext = Restaurants.findOne({_id: this.restaurant._id});
+		var metaContext = currentRestaurant: Restaurants.findOne({_id: this.restaurant._id});
+
     	var uploader = new Slingshot.Upload("myFileUploads", metaContext);
     	var id = this.restaurant._id;
 		uploader.send(document.getElementById('input').files[0], function (error, downloadUrl) {
@@ -85,15 +86,16 @@ Template.restaurantPage.events({
 	  		}
 		  	else {
 		  		imageUpload.set(uploader);
-		  		Meteor.call('clearDefault', metaContext, function(error, result) {
+		  		Meteor.call('clearDefault', metaContext);
+		  		Meteor.call('addPhoto', metaContext, function (error, result) {
 		  			if (error) {
-		  				console.log("bad");
+		  				throw new Meteor.Error('invalid-edit', 'Yo your shit is broke');
 		  			} else {
-		  				Restaurants.update({_id: metaContext._id}, {$push: { images: {"defaultPic": true, "pic": downloadUrl, "submitted": Meteor.call('submitted')} }});
+		  				console.log('good');
 		  			}
-		  		});
-		  	}
-		});
+		  		}); //end of addPhoto
+		  	} //end of else
+		});// end of uploader.send
   	},
 
   	'mouseenter .profile-background': function(event, template) {

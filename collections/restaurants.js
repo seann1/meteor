@@ -87,7 +87,7 @@ Meteor.methods({
 	clearDefault: function(restaurantAttributes) {
 		Restaurants.update({_id: restaurantAttributes._id, "images.defaultPic": true}, {$set: {"images.$.defaultPic": false} }, {multi: true});
 	},
-	submitted: function(restaurantAttributes) {
-		return new Date();
+	addPhoto: function(restaurantAttributes) {
+		Restaurants.update({_id: restaurantAttributes.currentRestaurant._id}, {$push: { images: {"defaultPic": true, "pic": restaurantAttributes.picture, "submitted": new Date()})
 	}
 })
