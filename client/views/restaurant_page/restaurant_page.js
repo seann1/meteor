@@ -85,9 +85,10 @@ Template.restaurantPage.events({
 	    		alert (error);
 	  		}
 		  	else {
+		  		var metaContextPhoto = {currentRestaurant: metaContext, picture: downloadUrl};
 		  		imageUpload.set(uploader);
 		  		Meteor.call('clearDefault', metaContext);
-		  		Meteor.call('addPhoto', metaContext, function (error, result) {
+		  		Meteor.call('addPhoto', metaContextPhoto, function (error, result) {
 		  			if (error) {
 		  				throw new Meteor.Error('invalid-edit', 'Yo your shit is broke');
 		  			} else {
