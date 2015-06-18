@@ -22,7 +22,10 @@ Restaurants.attachSchema(new SimpleSchema({
 	},
 	"images.$.pic": {
 		type: String
-	}
+	},
+	"images.$.submitted": {
+		type: Date
+	},
 }));
 
 Meteor.methods({
@@ -35,7 +38,7 @@ Meteor.methods({
 		var user = Meteor.user();
 		var restaurant = _.extend(restaurantAttributes, {
 			userId: user._id,
-			images: [{defaultPic: true, pic: 'https://sean-carty.s3-us-west-2.amazonaws.com/missing_screen.png'}]
+			images: [{defaultPic: true, pic: 'https://sean-carty.s3-us-west-2.amazonaws.com/missing_screen.png', submitted: new Date()}]
 		});
 
 		return Restaurants.insert(restaurant);
@@ -83,5 +86,8 @@ Meteor.methods({
 	},
 	clearDefault: function(restaurantAttributes) {
 		Restaurants.update({_id: restaurantAttributes._id, "images.defaultPic": true}, {$set: {"images.$.defaultPic": false} }, {multi: true});
+	},
+	submitted: function(restaurantAttributes) {
+		return new Date();
 	}
 })

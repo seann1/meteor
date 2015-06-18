@@ -89,7 +89,7 @@ Template.restaurantPage.events({
 		  			if (error) {
 		  				console.log("bad");
 		  			} else {
-		  				Restaurants.update({_id: metaContext._id}, {$push: { images: {"defaultPic": true, "pic": downloadUrl} }});
+		  				Restaurants.update({_id: metaContext._id}, {$push: { images: {"defaultPic": true, "pic": downloadUrl, "submitted": Meteor.call('submitted')} }});
 		  			}
 		  		});
 		  	}
