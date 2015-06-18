@@ -74,7 +74,7 @@ Template.restaurantPage.helpers({
 
 Template.restaurantPage.events({
 	'change #input': function(event, template) {
-		var metaContext = currentRestaurant: Restaurants.findOne({_id: this.restaurant._id});
+		var metaContext = Restaurants.findOne({_id: this.restaurant._id});
 
     	var uploader = new Slingshot.Upload("myFileUploads", metaContext);
     	var id = this.restaurant._id;
